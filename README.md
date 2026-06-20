@@ -1,4 +1,4 @@
-# AAU Data Science & AI Engineer Projects 🚀
+# AAU Data Science & AI Engineer Projects 
 
 Welcome to my **Data Science and AI Engineering Projects Repository**.
 
