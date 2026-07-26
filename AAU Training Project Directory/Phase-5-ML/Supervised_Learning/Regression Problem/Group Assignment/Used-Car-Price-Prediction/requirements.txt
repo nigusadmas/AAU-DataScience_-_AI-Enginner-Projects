@@ -3,8 +3,3 @@ pandas
 numpy
 scikit-learn
 joblib
-xgboost
-catboost
-lightgbm
-matplotlib
-seaborn
