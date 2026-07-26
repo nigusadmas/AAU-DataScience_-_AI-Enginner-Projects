@@ -12,7 +12,7 @@ import json
 # PAGE CONFIGURATION
 # ==========================================================
 st.set_page_config(
-    page_title="Car Price Prediction AI",
+    page_title="Car Price Prediction ",
     page_icon="🚗",
     layout="wide"
 )
@@ -141,6 +141,10 @@ linear-gradient(
 hr{
 border-color:#334155;
 }
+.caption{
+text-align:center;
+}
+
 </style>
 """,
 unsafe_allow_html=True
@@ -162,7 +166,7 @@ model,scaler,encoders,features = load_components()
 # ==========================================================
 # HEADER
 # ==========================================================
-st.title("🚗 AI Car Price Prediction System")
+st.title("🚗 Car Price Prediction System")
 st.write(
 """
 Machine Learning powered vehicle price estimation system.
@@ -287,8 +291,20 @@ if st.button("🚀 Predict Car Price"):
 # FOOTER
 # ==========================================================
 from datetime import datetime
-
 st.divider()
-st.caption(
-    f"© {datetime.now().year} Nigus Admas. All Rights Reserved. | 🚗 Car Price Prediction AI | Powered by Machine Learning"
+
+st.markdown(
+    f"""
+    <div style="
+        text-align:center;
+        color:#94a3b8;
+        font-size:16px;
+        padding:10px;
+    ">
+        © {datetime.now().year} Nigus Admas. All Rights Reserved. 
+        | 🚗 Car Price Prediction 
+        | Powered by Machine Learning
+    </div>
+    """,
+    unsafe_allow_html=True
 )
