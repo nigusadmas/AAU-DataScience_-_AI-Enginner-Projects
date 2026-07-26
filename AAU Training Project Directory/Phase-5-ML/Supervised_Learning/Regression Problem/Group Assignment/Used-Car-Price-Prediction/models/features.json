@@ -1,0 +1,15 @@
+{
+    "features": [
+        "brand",
+        "model",
+        "model_year",
+        "milage",
+        "fuel_type",
+        "engine",
+        "transmission",
+        "ext_col",
+        "int_col",
+        "accident"
+    ],
+    "number_of_features": 10
+}
