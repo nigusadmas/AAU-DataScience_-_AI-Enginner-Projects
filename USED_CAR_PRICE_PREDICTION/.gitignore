@@ -6,9 +6,6 @@ __pycache__/
 *.pkl
 *.joblib
 
-models/
-
-outputs/
 
 .env
 
