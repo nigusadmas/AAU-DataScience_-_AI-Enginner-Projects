@@ -16,7 +16,68 @@
     box-shadow:0px 3px 10px rgba(0,0,0,.1);
     text-align:center;
 }
+/* =====================================================
+   Metric Cards
+===================================================== */
 
+.metric-card {
+    background: linear-gradient(135deg, #020617, #0F172A, #1E3A8A);
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 6px solid #3B82F6;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(59,130,246,0.35);
+}
+
+/* ======================================================
+   About Project Card
+   ====================================================== */
+
+.about-card{
+    background: linear-gradient(135deg,#020617,#0F172A,#1E3A8A);
+    color:white;
+    padding:30px;
+    border-radius:18px;
+    border-left:6px solid #3B82F6;
+    box-shadow:0 8px 20px rgba(0,0,0,.30);
+}
+
+.about-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 28px rgba(59,130,246,.35);
+}
+
+.about-card h2{
+    color:#60A5FA;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.about-card p{
+    font-size:17px;
+    line-height:1.8;
+    color:#E5E7EB;
+}
+
+.about-card ul{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.about-card li{
+    margin:12px 0;
+    font-size:16px;
+    color:#F8FAFC;
+}
+/* ======================================================
+   Footer
+   ====================================================== */
 .footer{
     text-align:center;
     color:gray;

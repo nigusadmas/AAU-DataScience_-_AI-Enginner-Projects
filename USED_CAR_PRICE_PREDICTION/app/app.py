@@ -65,76 +65,55 @@ Machine Learning Regression Web Application
 Predict the selling price of used vehicles using
 state-of-the-art Machine Learning models.
 </p>
-
 </div>
 """, unsafe_allow_html=True)
-
 st.write("")
 
 # =========================================================
 # Statistics
 # =========================================================
-
 st.subheader("📊 Project Overview")
-
 col1, col2, col3, col4 = st.columns(4)
-
 with col1:
     metric_card(
         "Dataset",
-        "4,009 Cars"
-    )
-
+        "4,009 Cars")
 with col2:
     metric_card(
         "Models",
-        "9"
-    )
-
+        "9")
 with col3:
     metric_card(
         "Target",
-        "Selling Price"
-    )
-
+        "Selling Price")
 with col4:
     metric_card(
         "Best Model",
-        "Random Forest"
-    )
-
+        "Random Forest")
 st.divider()
-
 # =========================================================
 # About Project
 # =========================================================
 
-left, right = st.columns([2, 1])
+left, right = st.columns([2, 1], gap="large")
 
 with left:
+    st.markdown("""
+    <div class="about-card">
+        <h2>🚗 About the Project</h2>
 
-    st.header("🚗 About the Project")
-
-    st.write("""
-This application predicts the selling price of used cars
-using Machine Learning regression algorithms.
-
-The project follows a complete Machine Learning workflow,
-including:
-
-- Dataset Understanding
-- Data Cleaning
-- Exploratory Data Analysis
-- Feature Engineering
-- Model Training
-- Hyperparameter Tuning
-- Model Evaluation
-- Prediction
-- Deployment
-""")
-
+        📂 Dataset Understanding
+        🧹 Data Cleaning
+        📊 Exploratory Data Analysis
+        ⚙️ Feature Engineering
+        🤖 Model Training
+        🎯 Hyperparameter Tuning
+        📈 Model Evaluation
+        💰 Price Prediction
+        ☁️ Deployment
+    </div>
+    """, unsafe_allow_html=True)
 with right:
-
     st.image(
         "app/assets/images/hero.png",
         use_container_width=True
@@ -173,11 +152,8 @@ st.divider()
 # =========================================================
 
 st.header("✨ Features")
-
 col1, col2 = st.columns(2)
-
 with col1:
-
     st.success("""
 ✅ Data Cleaning
 
@@ -237,21 +213,69 @@ st.divider()
 # =========================================================
 # Technologies
 # =========================================================
-
 st.header("🛠 Technology Stack")
-
 tech1, tech2, tech3, tech4 = st.columns(4)
-
 tech1.metric("Language", "Python")
-
 tech2.metric("Machine Learning", "Scikit-Learn")
-
 tech3.metric("Framework", "Streamlit")
-
 tech4.metric("Visualization", "Plotly")
 
 # =========================================================
 # Footer
 # =========================================================
 
-show_footer()
+
+footer = """
+<div class="footer">
+
+<hr>
+
+<h4>🚗 Used Car Price Prediction System</h4>
+
+<p>Intelligent AI and Data Engineering</p>
+
+<p>Addis Ababa University</p>
+
+<p>
+Developed using
+<b>Python</b>,
+<b>Scikit-Learn</b>,
+<b>Streamlit</b>,
+<b>Plotly</b>
+</p>
+
+<p>nigusadmas |© 2026 addis ababa unversity | All Rights Reserved</p>
+
+</div>
+"""
+
+st.markdown(footer, unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+
+/* Footer */
+.footer{
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 2px solid #0d6efd;
+    border-radius: 10px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.footer h4{
+    color: #0d6efd;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.footer p{
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+</style>
+""", unsafe_allow_html=True)

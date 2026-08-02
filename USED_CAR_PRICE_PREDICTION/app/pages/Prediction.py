@@ -112,6 +112,7 @@ with right:
 # Prediction Button
 # ==========================================
 st.divider()
+prediction = None 
 predict = st.button(
     "🚀 Predict Selling Price",
     use_container_width=True,
@@ -135,6 +136,39 @@ if predict:
                 "int_col":[interior],
                 "accident":[accident],
                 "clean_title":[clean_title]})
+
+            current_year = datetime.now().year
+
+            # Vehicle age
+            input_data["vehicle_age"] = current_year - input_data["model_year"]
+            
+            # Car age
+            input_data["car_age"] = input_data["vehicle_age"]
+            
+            # Mileage per year
+            input_data["milage_per_year"] = (
+                input_data["milage"] /
+                input_data["vehicle_age"].clip(lower=1)
+            )
+            
+            # Luxury brand
+            luxury_brands = [
+                "BMW",
+                "Mercedes-Benz",
+                "Audi",
+                "Lexus",
+                "Porsche",
+                "Jaguar",
+                "Land Rover",
+                "Tesla",
+                "Volvo"
+            ]
+            
+            input_data["luxury_brand"] = (
+                input_data["brand"]
+                .isin(luxury_brands)
+                .astype(int)
+            )
             # ------------------------------
             # Preprocess
             # ------------------------------
@@ -145,95 +179,121 @@ if predict:
             prediction = model.predict(transformed)[0]
             prediction = round(prediction,2)
         st.success("Prediction completed successfully!")
+        st.markdown(f"""
+        <div style="
+        background:linear-gradient(135deg,#2563EB,#3B82F6);
+        padding:30px;
+        border-radius:20px;
+        color:white;
+        text-align:center;
+        ">
+        <h2>💰 Estimated Selling Price</h2>
+        <h1>${prediction:,.2f}</h1>
+        </div>
+        """, unsafe_allow_html=True)
     except Exception as e:
         st.error("Prediction Failed")
         st.exception(e)
 
 
 # ==========================================
-# Prediction Result
-# ==========================================
-        st.markdown("<br>", unsafe_allow_html=True)
-        st.markdown(f"""
-<div style="
-background:linear-gradient(135deg,#2563EB,#3B82F6);
-padding:30px;
-border-radius:20px;
-color:white;
-text-align:center;
-box-shadow:0px 10px 30px rgba(0,0,0,.2);
-">
-<h2>💰 Estimated Selling Price</h2>
-<h1>${prediction:,.2f}</h1>
-</div>
-""", unsafe_allow_html=True)
-
-# ==========================================
 # Prediction Information
 # ==========================================
-col1,col2,col3=st.columns(3)
-with col1:
-    st.metric("Best Model","Random Forest")
-with col2:
-    st.metric("Prediction Time","<1 sec")
-with col3:
-    st.metric("Status","Completed")
 
-st.divider()
-st.subheader("🚘 Vehicle Summary")
-summary = pd.DataFrame({
-    "Feature":[
-        "Brand",
-        "Model",
-        "Year",
-        "Mileage",
-        "Fuel",
-        "Transmission",
-        "Engine",
-        "Exterior",
-        "Interior",
-        "Accident",
-        "Clean Title"],
-    "Value":[
-        brand,
-        model_name,
-        year,
-        mileage,
-        fuel,
-        transmission,
-        engine,
-        ext,
-        interior,
-        accident,
-        clean_title]})
-st.dataframe(
-    summary,use_container_width=True,hide_index=True)
+if prediction is not None:
 
-# ==========================================
-# Download Prediction
-# ==========================================
+    col1, col2, col3 = st.columns(3)
 
-result = pd.DataFrame({
-    "Brand":[brand],
-    "Model":[model_name],
-    "Year":[year],
-    "Mileage":[mileage],
-    "Predicted Price":[prediction]})
-csv=result.to_csv(index=False)
-st.download_button(
-    "📥 Download Prediction",
-    csv,
-    "prediction.csv",
-    "text/csv",
-    use_container_width=True)
+    with col1:
+        st.metric("Best Model", "Random Forest")
 
-import plotly.express as px
-if len(history)>0:
-    fig=px.bar(
-        history,
-        x="Brand",
-        y="Prediction",
-        color="Brand",
-        title="Prediction History")
-    st.plotly_chart(fig,use_container_width=True)
-st.success("✅ Thank you for using the Used Car Price Prediction System.")
+    with col2:
+        st.metric("Prediction Time", "<1 sec")
+
+    with col3:
+        st.metric("Status", "Completed")
+
+    st.divider()
+
+    # ==========================================
+    # Vehicle Summary
+    # ==========================================
+
+    st.subheader("🚘 Vehicle Summary")
+
+    summary = pd.DataFrame({
+        "Feature": [
+            "Brand",
+            "Model",
+            "Year",
+            "Mileage",
+            "Fuel",
+            "Transmission",
+            "Engine",
+            "Exterior",
+            "Interior",
+            "Accident",
+            "Clean Title"
+        ],
+        "Value": [
+            brand,
+            model_name,
+            year,
+            mileage,
+            fuel,
+            transmission,
+            engine,
+            ext,
+            interior,
+            accident,
+            clean_title
+        ]
+    })
+
+    st.dataframe(
+        summary,
+        use_container_width=True,
+        hide_index=True
+    )
+
+    # ==========================================
+    # Download Prediction
+    # ==========================================
+
+    result = pd.DataFrame({
+        "Brand": [brand],
+        "Model": [model_name],
+        "Year": [year],
+        "Mileage": [mileage],
+        "Predicted Price": [prediction]
+    })
+
+    csv = result.to_csv(index=False)
+
+    st.download_button(
+        "📥 Download Prediction",
+        csv,
+        "prediction.csv",
+        "text/csv",
+        use_container_width=True
+    )
+
+    # ==========================================
+    # Prediction History (Optional)
+    # ==========================================
+
+    import plotly.express as px
+
+    history = pd.DataFrame()
+
+    if not history.empty:
+        fig = px.bar(
+            history,
+            x="Brand",
+            y="Prediction",
+            color="Brand",
+            title="Prediction History"
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+    st.success("✅ Thank you for using the Used Car Price Prediction System.")
