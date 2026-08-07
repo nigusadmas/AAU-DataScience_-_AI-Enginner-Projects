@@ -43,7 +43,7 @@ df = load_data()
 # --------------------------------------------------
 
 st.markdown("""
-# 📊 Dataset Dashboard
+# 📊 EDA Dashboard
 Explore and understand the Used Car dataset.
 """)
 

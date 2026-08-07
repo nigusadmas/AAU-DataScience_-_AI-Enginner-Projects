@@ -13,15 +13,11 @@ from datetime import datetime
 # =========================================================
 
 def show_footer():
-
     year = datetime.now().year
-
     st.markdown("<br>", unsafe_allow_html=True)
-
     st.markdown(
         f"""
         <style>
-
         .footer {{
             margin-top:40px;
             padding:25px;
@@ -60,16 +56,13 @@ def show_footer():
             Developed using
             <b>Python</b>,
             <b>Scikit-Learn</b>,
-            <b>Streamlit</b>,
-            <b>Plotly</b>
+            <b>Plotly</b>,
+            <b>Streamlit</b>
             </p>
-
             <p>
-            © {year} Group 6 | All Rights Reserved
+            © {year}nigusadmas| All Rights Reserved
             </p>
-
         </div>
-
         """,
         unsafe_allow_html=True,
     )

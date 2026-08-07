@@ -89,7 +89,7 @@ with col3:
 with col4:
     metric_card(
         "Best Model",
-        "Random Forest")
+        "Ridge Regression")
 st.divider()
 # =========================================================
 # About Project

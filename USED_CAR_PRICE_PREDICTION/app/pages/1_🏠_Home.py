@@ -5,7 +5,6 @@ from pathlib import Path
 # =====================================================
 # Page Configuration
 # =====================================================
-
 st.set_page_config(
     page_title="Used Car Price Prediction",
     page_icon="🚗",
@@ -41,9 +40,6 @@ st.markdown("""
 <h1 style="font-size:55px;color:#2563EB;">
 🚗 Used Car Price Prediction System
 </h1>
-<h3 style="color:gray;">
-Intelligent AI and Data Engineering
-</h3>
 <p style="font-size:20px;">
 Predict the selling price of used cars using advanced Machine Learning Regression algorithms.
 </p>
@@ -53,12 +49,10 @@ Predict the selling price of used cars using advanced Machine Learning Regressio
 # =====================================================
 # Call To Action
 # =====================================================
-col1, col2, col3 = st.columns([1,1,1])
+col1, col2 = st.columns([1,1])
 with col1:
-    st.button("🚗 Start Prediction", use_container_width=True)
-with col2:
     st.button("📊 Explore Dataset", use_container_width=True)
-with col3:
+with col2:
     st.button("📈 Compare Models", use_container_width=True)
 st.write("")
 
@@ -69,8 +63,8 @@ st.markdown("## 📊 Project Statistics")
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("🚗 Cars", "4,009")
 c2.metric("🤖 Models", "9")
-c3.metric("🎯 Best Model", "Random Forest")
-c4.metric("📈 R² Score", "0.95")
+c3.metric("🎯 Best Model", "Ridge Regression")
+c4.metric("📈 R² Score", "0.823")
 st.divider()
 
 # =====================================================
@@ -136,14 +130,14 @@ m1,m2,m3 = st.columns(3)
 with m1:
     st.markdown("""
 ✅ Linear Regression
-✅ Ridge Regression
+⭐ Ridge Regression
 ✅ Lasso Regression
 """)
 with m2:
 
     st.markdown("""
 ✅ Decision Tree
-⭐ Random Forest
+✅ Random Forest
 ✅ Gradient Boosting
 """)
 with m3:
@@ -152,6 +146,8 @@ with m3:
 ✅ Extra Trees
 ✅ AdaBoost
 """)
+
+
 st.divider()
 
 # =====================================================
