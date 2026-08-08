@@ -388,24 +388,24 @@ Based on the uploaded dataset:
 
 ---
 
-# 📁 Suggested Project Structure
+# 📁 Project Structure
 
 ```text
 Mall-Customer-Segmentation/
 │
-├── data/
+├── dataset/
 │   └── Mall_Customers.csv
 │
-├── notebooks/
-│   └── Mall_Customer_Segmentation.ipynb
+├── Mall_Customer_Segmentation.ipynb
+│    
 │
-├── outputs/
-│   ├── visualizations/
-│   └── cluster_results/
+├── figures/
+│   
+│   
 │
 ├── README.md
 │
-└── requirements.txt
+└── app.py
 ```
 # 📌 Key Questions the Project Answers
 
@@ -467,3 +467,9 @@ The Mall Customer Segmentation project demonstrates how **unsupervised machine l
 By combining customer demographics with income and spending behavior, the project uses K-Means clustering to discover meaningful customer groups. The resulting clusters can provide valuable insights into customer behavior and help businesses develop more effective and targeted marketing strategies.
 
 Ultimately, the project demonstrates the practical value of **data-driven customer segmentation for business intelligence and decision-making**.
+
+# Localapplink
+
+http://localhost:8502
+
+
