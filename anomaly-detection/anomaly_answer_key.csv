@@ -1,0 +1,29 @@
+product_id,date,type,original_value,injected_value,note
+P001,2023-03-14,point_spike,,432.0,Inferred isolated point spike; original value is not recoverable exactly from the supplied file.
+P001,2023-06-05,stockout_zero_run,,0.0,Inferred member of stockout run 2023-06-05 to 2023-06-08.
+P001,2023-06-06,stockout_zero_run,,0.0,Inferred member of stockout run 2023-06-05 to 2023-06-08.
+P001,2023-06-07,stockout_zero_run,,0.0,Inferred member of stockout run 2023-06-05 to 2023-06-08.
+P001,2023-06-08,stockout_zero_run,,0.0,Inferred member of stockout run 2023-06-05 to 2023-06-08.
+P001,2023-08-08,data_entry_error,,9999.0,Inferred obvious data-entry error from extreme/impossible value.
+P001,2024-07-02,point_spike,,490.0,Inferred isolated point spike; original value is not recoverable exactly from the supplied file.
+P001,2024-09-01,missing_record,,,Date is missing from the product's daily calendar.
+P001,2024-09-02,missing_record,,,Date is missing from the product's daily calendar.
+P002,2023-09-19,point_spike,,342.0,Inferred isolated point spike; original value is not recoverable exactly from the supplied file.
+P002,2023-12-25,data_entry_error,,88888.0,Inferred obvious data-entry error from extreme/impossible value.
+P002,2024-01-10,stockout_zero_run,,0.0,Inferred member of stockout run 2024-01-10 to 2024-01-12.
+P002,2024-01-11,stockout_zero_run,,0.0,Inferred member of stockout run 2024-01-10 to 2024-01-12.
+P002,2024-01-12,stockout_zero_run,,0.0,Inferred member of stockout run 2024-01-10 to 2024-01-12.
+P002,2024-05-01,level_shift_start,,,Inferred P002 sustained level-shift start; exact injected baseline value is not recoverable from the supplied file.
+P002,2024-06-06,duplicate_record,66.0,66.0,Second occurrence of a duplicated product/date row.
+P003,2023-05-10,missing_record,,,Date is missing from the product's daily calendar.
+P003,2023-05-11,missing_record,,,Date is missing from the product's daily calendar.
+P003,2023-05-12,missing_record,,,Date is missing from the product's daily calendar.
+P003,2024-04-16,data_entry_error,,-5.0,Inferred obvious data-entry error from extreme/impossible value.
+P004,2023-04-11,duplicate_record,72.0,72.0,Second occurrence of a duplicated product/date row.
+P004,2023-10-01,gradual_drift_start,,,Inferred start of P004's gradual downward drift.
+P004,2023-11-20,stockout_zero_run,,0.0,Inferred member of stockout run 2023-11-20 to 2023-11-24.
+P004,2023-11-21,stockout_zero_run,,0.0,Inferred member of stockout run 2023-11-20 to 2023-11-24.
+P004,2023-11-22,stockout_zero_run,,0.0,Inferred member of stockout run 2023-11-20 to 2023-11-24.
+P004,2023-11-23,stockout_zero_run,,0.0,Inferred member of stockout run 2023-11-20 to 2023-11-24.
+P004,2023-11-24,stockout_zero_run,,0.0,Inferred member of stockout run 2023-11-20 to 2023-11-24.
+P004,2024-02-27,point_spike,,192.0,Inferred isolated point spike; original value is not recoverable exactly from the supplied file.
