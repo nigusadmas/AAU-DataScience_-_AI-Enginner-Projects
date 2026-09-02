@@ -1,2 +1,13 @@
 USED_CAR_PRICE_PREDICTION/train.py
 USED_CAR_PRICE_PREDICTION/app/pages/Untitled.ipynb
+# Machine Learning datasets
+CNN-Xray/chest_xray_data/
+Image-Classifier/intel_data/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.py[cod]
